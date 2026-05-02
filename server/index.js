@@ -13,6 +13,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 console.log('EMAIL_USER loaded:', !!process.env.EMAIL_USER);
 console.log('EMAIL_PASS loaded:', !!process.env.EMAIL_PASS);
 
